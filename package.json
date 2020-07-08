@@ -1,0 +1,79 @@
+{
+  "name": "coc-java-lombok",
+  "version": "1.0.0",
+  "description": "Lombok support for coc-java",
+  "main": "lib/index.js",
+  "publisher": "kovetskiy",
+  "engines": {
+    "coc": ">=0.0.66"
+  },
+  "keywords": [
+    "coc.nvim",
+    "coc-java",
+    "coc-java-lombok",
+    "lombok"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kovetskiy/coc-java-lombok"
+  },
+  "bugs": "https://github.com/kovetskiy/coc-java-lombok/issues",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "webpack",
+    "prepare": "npx npm-run-all clean build"
+  },
+  "activationEvents": [
+    "onLanguage:java",
+    "workspaceContains:pom.xml",
+    "workspaceContains:build.gradle",
+    "workspaceContains:.classpath"
+  ],
+  "contributes": {
+    "rootPatterns": [
+      {
+        "filetype": "java",
+        "patterns": [
+          "package.json",
+          ".project",
+          ".classpath",
+          "build.gradle"
+        ]
+      }
+    ],
+    "snippets": [],
+    "configuration": {},
+    "commands": []
+  },
+  "author": "egor@reconquest.io",
+  "license": "EPL-1.0",
+  "devDependencies": {
+    "@chemzqm/tsconfig": "^0.0.3",
+    "@chemzqm/tslint-config": "^1.0.18",
+    "@types/glob": "7.1.1",
+    "@types/got": "^9.4.4",
+    "@types/mkdirp": "^0.5.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.5",
+    "@types/tunnel": "^0.0.0",
+    "coc.nvim": "0.0.68",
+    "compressing": "^1.4.0",
+    "decompress": "^4.2.0",
+    "expand-home-dir": "^0.0.3",
+    "find-java-home": "0.2.0",
+    "glob": "^7.1.4",
+    "got": "^9.6.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.1.4",
+    "path-exists": "^4.0.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^6.0.3",
+    "tslint": "^5.17.0",
+    "tunnel": "^0.0.6",
+    "typescript": "3.5.1",
+    "vscode-languageserver-protocol": "^3.15.0-next.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {}
+}
